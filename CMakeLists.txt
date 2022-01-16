@@ -3,4 +3,4 @@ project(Proyecto_Adrian_Jorge)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Proyecto_Adrian_Jorge main.cpp Cliente.cpp Cliente.h)
+add_executable(Proyecto_Adrian_Jorge main.cpp Cliente.cpp Cliente.h Vista.cpp Vista.h Control.cpp Control.h)
