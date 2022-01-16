@@ -70,9 +70,9 @@ Cliente *Vista::agregarCliente() {
     cin>>id;
     cout<<"Ingresa con un nino? y/n:";
     cin>>nin;
-    cout<<"Es una persona embarazada? y/n";
+    cout<<"Es una persona embarazada? y/n:";
     cin>>emb;
-    cout<<"Es adulto mayor? y/n";
+    cout<<"Es adulto mayor? y/n:";
     cin>>adM;
     cout<<"Tipos de categoria:\n 1. Premium\n2. Oro\n3. Normal\nIngrese una opcion: ";
     cin>>cat;

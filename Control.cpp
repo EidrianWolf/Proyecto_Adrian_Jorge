@@ -20,6 +20,8 @@ void Control::principal() {
             case 4:
             case 5:
             case 6:
+                control6();
+                break;
             case 7:
                 control7();
                 break;
@@ -29,7 +31,10 @@ void Control::principal() {
         }
     }while(opc!=7);
 }
-
+void Control::control6() {
+    Cliente* cl = Vista::agregarCliente();
+    //Este cliente se debe agregar al arbol
+}
 void Control::control7() {
     Vista::salida();
 }
@@ -37,3 +42,5 @@ void Control::control7() {
 void Control::opcionIncorrecta() {
     Vista::opcionIncorrecta();
 }
+
+
