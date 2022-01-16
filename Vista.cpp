@@ -19,6 +19,21 @@ int Vista::menuPrincipal() {
     return opc;
 }
 
+void Vista::encolarClientes() { //Recibe el arbol y la cola por parametro
+    /*
+     * Deberia recorrer el arbol y guardar todos los clientes en la cola
+     *  el criterio de influencia se calcula con Cliente::getPorcentajeInfluencia()
+     *  utilizar cola->enconlar() en ciclo mientras se recorre el arbol
+     */
+}
+
+void Vista::encolarCliente() {  //Recibe arbol por parametro
+    string ced;
+    cout<<"Ingrese el numero de cedula del cliente que desea encolar: ";
+    cin>>ced;
+    //cola->encolar(arbol->buscarCliente(ced))
+}
+
 void Vista::salida() {
     cout<<"Hasta luego"<<endl;
 }
@@ -26,3 +41,49 @@ void Vista::salida() {
 void Vista::opcionIncorrecta() {
     cout<<"Esta opcion no es valida, vuelva a intentarlo..."<<endl;
 }
+
+void Vista::atenderClientes() {
+    // Muestra la info de los siguientes 5 clientes
+    //cola.pop() <- x5
+}
+
+void Vista::atenderTodosLosClientes() {
+    //Recorre toda la fila y muestra la info de TODOS los clientes
+    //importante borrarlos una vez son "atendidos"
+    //cola.pop()
+}
+
+void Vista::siguienteCliente() {
+    /*
+     * Muestra informacion del ultimo cliente en cola, el cual sera el siguiente
+     * cola->last()->toString()
+     */
+}
+
+Cliente *Vista::agregarCliente() {
+    string nom,id,nin,emb,adM;
+    int cat;
+    bool nino= false,embar = false,adultM = false;
+    cout<<"Ingrese el nombre del cliente: ";
+    cin>>nom;
+    cout<<"Ingrese el numero de identificacion: ";
+    cin>>id;
+    cout<<"Ingresa con un nino? y/n:";
+    cin>>nin;
+    cout<<"Es una persona embarazada? y/n";
+    cin>>emb;
+    cout<<"Es adulto mayor? y/n";
+    cin>>adM;
+    cout<<"Tipos de categoria:\n 1. Premium\n2. Oro\n3. Normal\nIngrese una opcion: ";
+    cin>>cat;
+    if(nin=="y"||nin=="Y")
+        nino= true;
+    if(emb=="y"||emb=="Y")
+        embar= true;
+    if(adM=="y"||adM=="Y")
+        adultM= true;
+    return new Cliente(nom,id,nino,embar,adultM,cat);
+}
+
+
+
