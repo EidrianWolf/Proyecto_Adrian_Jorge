@@ -20,10 +20,10 @@ string Cliente::toString(){
     stringstream s;
     s<<"Nombre: "<<nombre<<endl<<
     "Identificacion: "<<id<<endl<<
-    "Ingresa con nino: "<<nino?"Si":"No";
-    s<<"\nEsta embarazada: "<<embarazada?"Si":"No";
-    s<<"\nEs adulto mayor: "<<adultoM?"Si":"No";
-    s<<"Categoria: "<<categoria<<endl;
+    "Ingresa con nino: "; nino?s<<"Si":s<<"No";
+    s<<"\nEsta embarazada: "; embarazada?s<<"Si":s<<"No";
+    s<<"\nEs adulto mayor: "; adultoM?s<<"Si":s<<"No";
+    s<<"\nCategoria: "<<categoria<<endl;
     return s.str();
 }
 int Cliente::getPorcentajeInfluencia(){

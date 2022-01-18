@@ -8,6 +8,7 @@
 
 class Control {
 private:
+    BST<Cliente>* bst;
     //Aqui deberian estar los arboles, las colas y los heaps
 public:
     Control();

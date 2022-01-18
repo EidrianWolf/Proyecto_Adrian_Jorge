@@ -5,7 +5,7 @@
 #ifndef PROYECTO_ADRIAN_JORGE_VISTA_H
 #define PROYECTO_ADRIAN_JORGE_VISTA_H
 #include <iostream>
-#include "Cliente.h"
+#include "Archivos.cpp"
 using namespace std;
 
 class Vista {
