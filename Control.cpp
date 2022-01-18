@@ -14,8 +14,6 @@ void Control::principal() {
     Archivos<Cliente> file("DatosBancoUno.txt");
     file.cargar(bst);
 
-    bst->display();
-    cout<<bst->getCant()<<endl;
     int opc;
     do {
         opc = Vista::menuPrincipal();
