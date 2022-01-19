@@ -35,3 +35,7 @@ int Cliente::getPorcentajeInfluencia(){
     else if(categoria==2) porcentaje+=10;
     return porcentaje;
 }
+
+bool Cliente::operator<(Cliente c) {
+    return getPorcentajeInfluencia()<c.getPorcentajeInfluencia();
+}

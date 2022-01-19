@@ -30,6 +30,7 @@ public:
     void setCategoria(int cat);
     string toString();
     int getPorcentajeInfluencia();
+    bool operator<(Cliente c);
 };
 
 

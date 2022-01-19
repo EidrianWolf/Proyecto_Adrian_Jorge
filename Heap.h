@@ -1,15 +1,17 @@
 //
-// Created by jartu on 1/13/2022.
+// Created by jartu on 1/16/2022.
 //
 
-#ifndef HEAP_PRIORITY_QUEUE_HEAP_H
-#define HEAP_PRIORITY_QUEUE_HEAP_H
+#ifndef HEAP_TEMPLATE_HEAP_H
+#define HEAP_TEMPLATE_HEAP_H
 #include <iostream>
+#include "RuntimeException.h"
 using namespace std;
 
-template <class tipo>
+template<class tipo>
 class Heap {
-    tipo* *harr;
+private:
+    tipo* *arr;
     int capacity;
     int heap_size;
 public:
@@ -18,13 +20,16 @@ public:
     int parent(int i);
     int left(int i);
     int right(int i);
-    int getMin();
-    int extractMin();
-    void decreaseKey(int i, int new_val);
+    tipo* getMin();
+    tipo* extractMin();
+    void decreaseKey(int i, tipo* new_value);
     void deleteKey(int i);
-    void insertKey(int k);
+    void insertKey(tipo* k);
+    tipo* get(int index);
+    int size()const;
+    void swap(tipo** x,tipo** y);
+    int getCapacity()const;
 };
 
-void swap(int* x,int* y);
 
-#endif //HEAP_PRIORITY_QUEUE_HEAP_H
+#endif //HEAP_TEMPLATE_HEAP_H
