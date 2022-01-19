@@ -29,6 +29,7 @@ public:
     int size()const;
     void swap(tipo** x,tipo** y);
     int getCapacity()const;
+
 };
 
 

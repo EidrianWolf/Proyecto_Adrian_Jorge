@@ -7,11 +7,12 @@
 
 #include <iostream>
 using namespace std;
-class RuntimeException {
+class RuntimeException{
 private:
     string msg;
 public:
     RuntimeException(const string& e);
+
     string getMessage()const;
 };
 

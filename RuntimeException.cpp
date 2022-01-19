@@ -7,9 +7,6 @@
 RuntimeException::RuntimeException(const string& e): msg(e) {}
 
 string RuntimeException::getMessage() const {
-    return msg;
-}
+    return msg;}
 
-QueueException::QueueException(const string &e) : RuntimeException(e) {
-
-}
+QueueException::QueueException(const string &e) : RuntimeException(e) {}

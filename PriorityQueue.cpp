@@ -18,7 +18,7 @@ void PriorityQueue<E>::insert( E &e) {
     if (T->size() < T->getCapacity())
         T->insertKey(&e);
     else {
-        throw new QueueException("Overflow: Maximum capacity reached");
+        throw new QueueException(" Overflow: Maximum capacity reached");
         return;
     }
 }

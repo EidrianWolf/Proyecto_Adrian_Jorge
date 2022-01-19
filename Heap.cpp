@@ -79,7 +79,7 @@ void Heap<tipo>::deleteKey(int i) {
 template<class tipo>
 void Heap<tipo>::insertKey(tipo *k) {
     if(heap_size==capacity){
-        throw new RuntimeException("Overflow: Could not insert key");
+        throw new RuntimeException(" Overflow: Could not insert key");
         return;
     }
     heap_size++;

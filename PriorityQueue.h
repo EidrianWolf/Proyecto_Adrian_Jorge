@@ -17,7 +17,6 @@ public:
     void insert( E& e);
     const E& min();
     void removeMin();
-
     PriorityQueue(int capacity);
 };
 
