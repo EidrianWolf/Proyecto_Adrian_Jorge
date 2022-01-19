@@ -7,6 +7,7 @@
 Control::Control() {
     //Iniciar las estructuras de datos
     bst = new BST<Cliente>;
+    cp = new PriorityQueue<Cliente>(100);
     principal();
 }
 

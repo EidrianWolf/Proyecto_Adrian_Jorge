@@ -90,7 +90,7 @@ void BST<T>::inOrder(Nodo<T> *t) {
     if (t == nullptr)
         return;
     inOrder(t->getLeft());
-    cout << t->getData()->toString() << " ";
+    cout << t->getData()->toString() << " ";//No pueden haber cout aqui
     inOrder(t->getRight());
 }
 
@@ -118,9 +118,9 @@ void BST<T>::remove(int x) {
 }
 
 template <class T>
-void BST<T>::display() {
-    inOrder(root);
-    cout<<endl;
+void BST<T>::display() {    //Podria hacer un stringstream
+    inOrder(root);        // y enviar la referencia a los otros inOrder
+    cout<<endl; //No cout
 }
 
 template <class T>

@@ -42,8 +42,12 @@ void Vista::opcionIncorrecta() {
     cout<<"Esta opcion no es valida, vuelva a intentarlo..."<<endl;
 }
 
-void Vista::atenderClientes() {
+void Vista::atenderClientes(PriorityQueue<Cliente>* cola) {
     // Muestra la info de los siguientes 5 clientes
+    for(int i=0;i<5;i++) {
+        infoCliente(cola->min());
+        cola->removeMin();
+    }
     //cola.pop() <- x5
 }
 
@@ -83,6 +87,11 @@ Cliente *Vista::agregarCliente() {
     if(adM=="y"||adM=="Y")
         adultM= true;
     return new Cliente(nom,id,nino,embar,adultM,cat);
+}
+
+void Vista::infoCliente(Cliente c) {
+    cout<<"Informacion del cliente"<<endl;
+    cout<<c.toString()<<endl;
 }
 
 
