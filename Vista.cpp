@@ -63,28 +63,39 @@ void Vista::siguienteCliente(PriorityQueue<Cliente>*cola) {
 }
 
 Cliente *Vista::agregarCliente() {
-    string nom,id,nin,emb,adM;
-    int cat;
-    bool nino= false,embar = false,adultM = false;
-    cout<<"Ingrese el nombre del cliente: ";
-    cin>>nom;
-    cout<<"Ingrese el numero de identificacion: ";
-    cin>>id;
-    cout<<"Ingresa con un nino? y/n: ";
-    cin>>nin;
-    cout<<"Es una persona embarazada? y/n: ";
-    cin>>emb;
-    cout<<"Es adulto mayor? y/n: ";
-    cin>>adM;
-    cout<<"Tipos de categoria:\n1. Premium\n2. Oro\n3. Normal\nIngrese una opcion: ";
-    cin>>cat;
-    if(nin=="y"||nin=="Y")
-        nino= true;
-    if(emb=="y"||emb=="Y")
-        embar= true;
-    if(adM=="y"||adM=="Y")
-        adultM= true;
-    return new Cliente(nom,id,nino,embar,adultM,cat);
+    string nom, id, nin, emb, adM;
+    int cat, confirmacion;
+    bool nino = false, embar = false, adultM = false;
+    cout << "Ingrese el nombre del cliente: ";
+    cin >> nom;
+    cout << "Ingrese el numero de identificacion: ";
+    cin >> id;
+    cout << "Ingresa con un nino? y/n: ";
+    cin >> nin;
+    cout << "Es una persona embarazada? y/n: ";
+    cin >> emb;
+    cout << "Es adulto mayor? y/n: ";
+    cin >> adM;
+    cout << "Tipos de categoria:\n1. Premium\n2. Oro\n3. Normal\nIngrese una opcion: ";
+    cin >> cat;
+    if (nin == "y" || nin == "Y")
+        nino = true;
+    if (emb == "y" || emb == "Y")
+        embar = true;
+    if (adM == "y" || adM == "Y")
+        adultM = true;
+    cout << "¿Esta seguro de querer guardar el cliente creado?" << endl;
+    cout << "1)Si" << endl
+         << "2)No" << endl
+         << "Opcion: ";
+    cin >> confirmacion;
+    if (confirmacion == 1) {
+        cout << "Cliente agregado" << endl;
+        return new Cliente(nom, id, nino, embar, adultM, cat);
+    }else{
+        cout<<"Cliente no agregado"<<endl;
+        return nullptr;
+    }
 }
 
 void Vista::infoCliente(Cliente c) {

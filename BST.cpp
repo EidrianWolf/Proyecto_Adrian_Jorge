@@ -86,15 +86,6 @@ Nodo<T>* BST<T>::remove(int x, Nodo<T> *t) {
 }
 
 template <class T>
-void BST<T>::inOrder(Nodo<T> *t) {
-    if (t == nullptr)
-        return;
-    inOrder(t->getLeft());
-    cout << t->getData()->toString() << " ";//No pueden haber cout aqui
-    inOrder(t->getRight());
-}
-
-template <class T>
 Nodo<T>* BST<T>::find(Nodo<T> *t, T* x) {
     if (t == nullptr)
         return nullptr;
@@ -117,11 +108,6 @@ void BST<T>::remove(int x) {
     root = remove(x,root);
 }
 
-template <class T>
-void BST<T>::display() {    //Podria hacer un stringstream
-    inOrder(root);        // y enviar la referencia a los otros inOrder
-    cout<<endl; //No cout
-}
 
 template <class T>
 void BST<T>::search(T* x) {
@@ -131,4 +117,19 @@ void BST<T>::search(T* x) {
 template <class T>
 int BST<T>::getCant() {
     return cant;
+}
+
+template<class T>
+Nodo<T> *BST<T>::getRoot() const {
+    return root;
+}
+
+template <class T>
+string BST<T>::toString(Nodo<T> *t) {
+    return t->getData()->toString();
+}
+
+template<class T>
+string BST<T>::gArchivo(Nodo<T> *t) {
+    return t->getData()->toSave();
 }

@@ -17,7 +17,7 @@ private:
     fstream f;
 public:
     Archivos(const string &archivo);
-   // void guardar();
+   void guardar(string info);
     void cargar(BST<T>* tree);
 
 

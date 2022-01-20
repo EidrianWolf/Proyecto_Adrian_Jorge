@@ -6,14 +6,16 @@
 
 Control::Control() {
     //Iniciar las estructuras de datos
+    file = new Archivos<Cliente>("DatosBancoUno.txt");
     bst = new BST<Cliente>;
     cp = new PriorityQueue<Cliente>(100);
     principal();
 }
 
 void Control::principal() {
-    Archivos<Cliente> file("DatosBancoUno.txt");
-    file.cargar(bst);
+    file->cargar(bst);
+
+    cout<<bst->getCant()<<endl;
 
     int opc;
     do {
@@ -66,7 +68,10 @@ void Control::control5() {
 }
 void Control::control6() {
     Cliente* cl = Vista::agregarCliente();
-    bst->insert(cl);
+    if(cl != nullptr) {
+        bst->insert(cl);
+        file->guardar(cl->toSave());
+    }
 }
 void Control::control7() {
     Vista::salida();

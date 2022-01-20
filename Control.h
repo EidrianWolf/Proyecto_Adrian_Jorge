@@ -8,6 +8,7 @@
 
 class Control {
 private:
+    Archivos<Cliente>* file;
     BST<Cliente>* bst;
     PriorityQueue<Cliente>* cp;
     //Aqui deberian estar los arboles, las colas y los heaps

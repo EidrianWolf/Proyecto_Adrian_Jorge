@@ -31,6 +31,7 @@ public:
     string toString();
     int getPorcentajeInfluencia();
     bool operator<(Cliente c);
+    string toSave();
 
 };
 

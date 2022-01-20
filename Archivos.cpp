@@ -9,13 +9,25 @@ Archivos<T>::Archivos(const string &archivo) : archivo(archivo) {
 }
 
 
+template<class T>
+void Archivos<T>::guardar(string info) {
+    f.open(archivo, ios::app);
+    if (f.fail()) {
+        cout << "ERROR" << endl;
+        exit(1);
+    } else
+        f << endl << info;
+
+    f.close();
+}
+
 template <class T>
 void Archivos<T>::cargar(BST<T>* tree) {
     Cliente *nuevo;
     string linea, nombre, id;
     bool nino, embarazada, mayor;
     int cat;
-    f.open("DatosBancoUno.txt");
+    f.open(archivo);
 
     if (f.fail()) {
         cout << "Error" << endl;
@@ -28,11 +40,11 @@ void Archivos<T>::cargar(BST<T>* tree) {
         getline(f, linea, ',');
         id = linea;
         getline(f, linea, ',');
-        linea == "Yes"?nino = 1 : nino = 0;
+        linea == "Yes" ? nino = 1 : nino = 0;
         getline(f, linea, ',');
-        linea == "Yes"?embarazada = 1 : embarazada = 0;
+        linea == "Yes" ? embarazada = 1 : embarazada = 0;
         getline(f, linea, ',');
-        linea == "Yes"?mayor = 1 : mayor = 0;
+        linea == "Yes" ? mayor = 1 : mayor = 0;
         getline(f, linea);
         cat = stoi(linea);
 

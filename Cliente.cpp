@@ -37,5 +37,11 @@ int Cliente::getPorcentajeInfluencia(){
 }
 
 bool Cliente::operator<(Cliente c) {
-    return getPorcentajeInfluencia()<c.getPorcentajeInfluencia();
+    return getPorcentajeInfluencia() < c.getPorcentajeInfluencia();
+}
+
+string Cliente::toSave() {
+    stringstream s;
+    s<<nombre+","+id+",";nino?s<<"Yes,":s<<"No,"; embarazada?s<<"Yes,":s<<"No,"; adultoM?s<<"Yes,":s<<"No,"; s<<categoria;
+    return s.str();
 }

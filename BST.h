@@ -24,9 +24,12 @@ public:
     virtual ~BST();
     void insert(T *t);
     void remove(int x);
-    void display();
+    string display(Nodo<T> *t);
     void search(T *x);
     int getCant();
+    string toString(Nodo<T>* t);
+    Nodo<T> *getRoot() const;
+    string gArchivo(Nodo<T>* t);
 };
 
 
