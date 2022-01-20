@@ -43,25 +43,23 @@ void Vista::opcionIncorrecta() {
 }
 
 void Vista::atenderClientes(PriorityQueue<Cliente>* cola) {
-    // Muestra la info de los siguientes 5 clientes
     for(int i=0;i<5;i++) {
         infoCliente(cola->min());
         cola->removeMin();
     }
-    //cola.pop() <- x5
 }
 
-void Vista::atenderTodosLosClientes() {
-    //Recorre toda la fila y muestra la info de TODOS los clientes
-    //importante borrarlos una vez son "atendidos"
-    //cola.pop()
+void Vista::atenderTodosLosClientes(PriorityQueue<Cliente>* cola) {
+    while (!cola->empty()){
+        infoCliente(cola->min());
+        cola->removeMin();
+    }
+
 }
 
-void Vista::siguienteCliente() {
-    /*
-     * Muestra informacion del ultimo cliente en cola, el cual sera el siguiente
-     * cola->last()->toString()
-     */
+void Vista::siguienteCliente(PriorityQueue<Cliente>*cola) {
+    cout<<"Siguiente cliente en cola: "<<endl;
+    infoCliente(cola->min());
 }
 
 Cliente *Vista::agregarCliente() {
@@ -92,6 +90,10 @@ Cliente *Vista::agregarCliente() {
 void Vista::infoCliente(Cliente c) {
     cout<<"Informacion del cliente"<<endl;
     cout<<c.toString()<<endl;
+}
+
+void Vista::excepcion(RuntimeException *e) {
+    cout<<e->getMessage()<<endl;
 }
 
 

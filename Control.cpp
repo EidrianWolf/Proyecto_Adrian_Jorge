@@ -41,10 +41,32 @@ void Control::principal() {
         }
     }while(opc!=7);
 }
+void Control::control1() {  //Encolar todos los clientes
+
+}
+
+void Control::control2() {  //Encolar un cliente
+
+}
+
+void Control::control3() {  //Atender 5 clientes
+    try{
+        Vista::atenderClientes(cp);
+    }catch (RuntimeException* e){Vista::excepcion(e);}
+}
+void Control::control4() {
+    try{
+        Vista::siguienteCliente(cp);
+    }catch (RuntimeException* e){Vista::excepcion(e);}
+}
+void Control::control5() {
+    try{
+        Vista::atenderTodosLosClientes(cp);
+    }catch (RuntimeException* e){Vista::excepcion(e);}
+}
 void Control::control6() {
     Cliente* cl = Vista::agregarCliente();
     bst->insert(cl);
-    //Este cliente se debe agregar al arbol
 }
 void Control::control7() {
     Vista::salida();
@@ -53,5 +75,11 @@ void Control::control7() {
 void Control::opcionIncorrecta() {
     Vista::opcionIncorrecta();
 }
+
+
+
+
+
+
 
 

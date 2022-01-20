@@ -16,12 +16,13 @@ public:
     static void encolarClientes();  //Deberia recibir un arbol y una cola por parametro
     static void encolarCliente();   //Deberia recibir un arbol por parametro
     static void atenderClientes(PriorityQueue<Cliente>* cola);  //Cola
-    static void atenderTodosLosClientes();//Cola
-    static void siguienteCliente(); //Recibe la cola
+    static void atenderTodosLosClientes(PriorityQueue<Cliente>* cola);//Cola
+    static void siguienteCliente(PriorityQueue<Cliente>* cola); //Recibe la cola
     static Cliente* agregarCliente();
     static void salida();
     static void opcionIncorrecta();
     static void infoCliente(Cliente c);
+    static void excepcion(RuntimeException* e);
 };
 
 
