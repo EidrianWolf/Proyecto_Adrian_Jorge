@@ -25,4 +25,9 @@ class FileException:public RuntimeException{
 public:
     FileException(const string& e);
 };
+
+class StackEmpty:public RuntimeException{
+public:
+    StackEmpty(const string& e);
+};
 #endif //HEAP_TEMPLATE_RUNTIMEEXCEPTION_H

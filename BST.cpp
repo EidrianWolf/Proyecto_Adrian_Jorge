@@ -157,10 +157,7 @@ void BST<T>::encolar(PriorityQueue<T> &cola) {
      * continuo a la derecha con el mismo proceso
      */
 
-    while (iterator->getLeft()!= nullptr)//me voy lo mas profundo
-        iterator=iterator->getLeft();     //a la izquierda
 
-    cola.push(iterator->getData());
-    iterator=iterator
+
 }
 
