@@ -16,7 +16,7 @@ private:
     int heap_size;
 public:
     Heap(int capacity);
-    void MinHeapify(int i);
+    void MaxHeapify(int i);
     int parent(int i);
     int left(int i);
     int right(int i);
@@ -29,7 +29,6 @@ public:
     int size()const;
     void swap(tipo** x,tipo** y);
     int getCapacity()const;
-
 };
 
 

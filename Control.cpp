@@ -16,7 +16,6 @@ void Control::principal() {
     try{
     file->cargar(bst);
     }catch (FileException* e){Vista::excepcion(e);}
-    cout<<bst->getCant()<<endl;
     int opc;
     do {
         opc = Vista::menuPrincipal();
@@ -49,14 +48,34 @@ void Control::principal() {
     }while(opc!=7);
 }
 void Control::control1() {  //Encolar todos los clientes
+    Cliente* c = new Cliente("a","1",1,1,1,1);
+    Cliente* c1 = new Cliente("b","2",0,1,0,2);
+    Cliente* c2 = new Cliente("c","3",1,0,0,3);
 
+    cp->insert(*c);
+    //cp->sort();
+    cp->insert(*c1);
+    //cp->sort();
+    cp->insert(*c2);
+   // cp->sort();
+    cp->Heapify(0);
+    cout<<"Porcentajes a="<<c->getPorcentajeInfluencia()<<"\nb="
+    <<c1->getPorcentajeInfluencia()<<"\nc="<<c2->getPorcentajeInfluencia()<<endl;
+    cout<<cp->min().getNombre()<<endl;
+    cp->removeMin();
+    cout<<cp->min().getNombre()<<endl;
+    cp->removeMin();
+    cout<<cp->min().getNombre()<<endl;
 }
 
 void Control::control2() {  //Encolar un cliente
     try{
+        if(cp->size()!=cp->getCapacity()){
         string ced = Vista::cedulaCliente();
-        //cp->insert(bst.)
-
+        cp->insert(*bst->search(ced));
+        cout<<cp->min().getNombre()<<endl;
+        }
+        else throw new QueueException("Overflow: Maximum capacity reached");
     }catch (RuntimeException* e){Vista::excepcion(e);}
 }
 
@@ -98,7 +117,7 @@ void Control::control6() {
 }
 void Control::control7() {
     Vista::salida();
-    //file->guardar("DatosBancoUno.txt");
+    file->guardar("");
 }
 
 void Control::opcionIncorrecta() {

@@ -43,3 +43,18 @@ PriorityQueue<E>::PriorityQueue(int capacity) {
     T = new Heap<E>(capacity);
 }
 
+template<typename E>
+int PriorityQueue<E>::getCapacity() const {
+    return T->getCapacity();
+}
+
+template<typename E>
+void PriorityQueue<E>::sort() {
+    T->sort();
+}
+
+template<typename E>
+void PriorityQueue<E>::Heapify(int i) {
+    T->MinHeapify(i);
+}
+

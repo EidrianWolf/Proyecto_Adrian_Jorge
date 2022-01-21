@@ -12,17 +12,18 @@ Heap<tipo>::Heap(int capacity) {
 }
 
 template<class tipo>
-void Heap<tipo>::MinHeapify(int i) {
+void Heap<tipo>::MaxHeapify(int i) {
     int l = left(i);
     int r = right(i);
-    int smallest = i;
+    int largest = 0;
+    if()
     if(l<heap_size&&arr[l]<arr[i])
         smallest=l;
     if(r<heap_size&&arr[r]<arr[smallest])
         smallest=r;
     if(smallest!=i){
         swap(&arr[i],&arr[smallest]);
-        MinHeapify(smallest);
+        MaxHeapify(smallest);
     }
 }
 
@@ -57,7 +58,7 @@ tipo *Heap<tipo>::extractMin() {
     tipo* root = arr[0];
     arr[0]=arr[heap_size-1];
     heap_size--;
-    MinHeapify(0);
+    MaxHeapify(0);
     return root;
 }
 
@@ -85,7 +86,7 @@ void Heap<tipo>::insertKey(tipo *k) {
     heap_size++;
     int i=heap_size-1;
     arr[i]=k;
-    while (i!=0&&arr[parent(i)]<arr[i]){
+    while (i!=0&&arr[parent(i)]>arr[i]){
         swap(&arr[i],&arr[parent(i)]);
         i= parent(i);
     }
@@ -112,3 +113,4 @@ template<class tipo>
 int Heap<tipo>::getCapacity() const {
     return capacity;
 }
+

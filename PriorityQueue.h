@@ -18,6 +18,9 @@ public:
     const E& min();
     void removeMin();
     PriorityQueue(int capacity);
+    int getCapacity()const;
+    void sort();
+    void Heapify(int i);
 };
 
 

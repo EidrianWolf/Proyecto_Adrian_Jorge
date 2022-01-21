@@ -25,7 +25,7 @@ public:
     void insert(T *t);
     void remove(int x);
     string display(Nodo<T> *t);
-    void search(string t);
+    T* search(string t);
     int getCant();
     string toString(Nodo<T>* t);
     Nodo<T> *getRoot() const;

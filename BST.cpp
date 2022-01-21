@@ -110,8 +110,9 @@ void BST<T>::remove(int x) {
 
 
 template <class T>
-void BST<T>::search(string t) {
+T* BST<T>::search(string t) {
     root = find(root, t);
+    return root->getData();
 }
 
 template <class T>
