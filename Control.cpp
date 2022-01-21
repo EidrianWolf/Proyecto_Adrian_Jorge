@@ -68,9 +68,9 @@ void Control::control1() {  //Encolar todos los clientes
     cp->pop();
     cout << cp->max().getNombre() << endl;*/
 
-
-    bst->encolarEnCola(cp);
-
+    try {
+        bst->encolarEnCola(cp);
+    }catch (RuntimeException* e){Vista::excepcion(e);}
     cout<<cp->size()<<endl;
     cout<< cp->toString();
 }
