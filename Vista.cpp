@@ -31,7 +31,7 @@ void Vista::encolarCliente() {  //Recibe arbol por parametro
     string ced;
     cout<<"Ingrese el numero de cedula del cliente que desea encolar: ";
     cin>>ced;
-    //cola->encolar(arbol->buscarCliente(ced))
+    //cola->encolar(arbol->search(ced))
 }
 
 void Vista::salida() {

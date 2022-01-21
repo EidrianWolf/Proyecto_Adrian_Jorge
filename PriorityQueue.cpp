@@ -14,7 +14,7 @@ bool PriorityQueue<E>::empty() const {
 }
 
 template<typename E>
-void PriorityQueue<E>::insert( E &e) {
+void PriorityQueue<E>::insert( E& e) {
     if (T->size() < T->getCapacity())
         T->insertKey(&e);
     else {

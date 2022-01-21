@@ -14,9 +14,7 @@ Control::Control() {
 
 void Control::principal() {
     file->cargar(bst);
-
     cout<<bst->getCant()<<endl;
-
     int opc;
     do {
         opc = Vista::menuPrincipal();
@@ -26,6 +24,7 @@ void Control::principal() {
             case 2:
                 break;
             case 3:
+                control3();
                 break;
             case 4:
                 break;
