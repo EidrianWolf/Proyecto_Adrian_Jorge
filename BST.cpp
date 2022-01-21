@@ -134,3 +134,33 @@ template<class T>
 string BST<T>::gArchivo(Nodo<T> *t) {
     return t->getData()->toSave();
 }
+
+template<class T>
+void BST<T>::encolar(PriorityQueue<T> &cola) {
+    Nodo<T>* iterator=root;
+   /*while (iterator!= nullptr){   //Recorrer a la izquierda
+        cola.push(*(iterator->getData()));
+        iterator=iterator->getLeft();
+
+    }
+    iterator=root->getRight();
+    while(iterator!= nullptr){  //Recorrer a la derecha
+        cola.push(*(iterator->getData()));
+        iterator=iterator->getLeft();
+    }*/
+
+    /*
+     * Tengo el iterador en la raiz
+     * recorro la izquierda hasta encontrar null
+     * guardo esa posicion, tomo al padre y luego la derecha
+     * si es nulo vuelvo al padre y al padre de este
+     * continuo a la derecha con el mismo proceso
+     */
+
+    while (iterator->getLeft()!= nullptr)//me voy lo mas profundo
+        iterator=iterator->getLeft();     //a la izquierda
+
+    cola.push(iterator->getData());
+    iterator=iterator
+}
+

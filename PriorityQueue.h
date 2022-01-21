@@ -4,9 +4,12 @@
 
 #ifndef HEAP_TEMPLATE_PRIORITYQUEUE_H
 #define HEAP_TEMPLATE_PRIORITYQUEUE_H
+#include <iostream>
+#include <sstream>
 #include "Heap.h"
 #include "Heap.cpp"
 #include "RuntimeException.h"
+using namespace std;
 template <typename E>
 class PriorityQueue {
 private:
@@ -19,8 +22,8 @@ public:
     void pop();
     PriorityQueue(int capacity);
     int getCapacity()const;
-    void sort();
-    void Heapify(int i);
+    string toString();
+
 };
 
 

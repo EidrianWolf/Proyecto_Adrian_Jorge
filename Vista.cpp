@@ -21,7 +21,7 @@ int Vista::menuPrincipal() {
 
 void Vista::encolarClientes() { //Recibe el arbol y la cola por parametro
     /*
-     * Deberia recorrer el arbol y guardar todos los clientes en la cola
+     * Deberia recorrerIzq el arbol y guardar todos los clientes en la cola
      *  el criterio de influencia se calcula con Cliente::getPorcentajeInfluencia()
      *  utilizar cola->enconlar() en ciclo mientras se recorre el arbol
      */

@@ -6,6 +6,8 @@
 #define PROYECTO_ADRIAN_JORGE_BST_H
 
 #include "Nodo.cpp"
+#include "PriorityQueue.h"
+
 
 template <class T>
 class BST {
@@ -30,6 +32,7 @@ public:
     string toString(Nodo<T>* t);
     Nodo<T> *getRoot() const;
     string gArchivo(Nodo<T>* t);
+    void encolar(PriorityQueue<T>& cola);
 };
 
 

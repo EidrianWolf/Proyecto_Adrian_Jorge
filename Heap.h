@@ -16,20 +16,22 @@ private:
     int heap_size;
 public:
     Heap(int capacity);
-    void MaxHeapify(int i);
     int parent(int i);
     int left(int i);
     int right(int i);
-    tipo* getMin();
-    tipo* extractMax();
-    void decreaseKey(int i, tipo* new_value);
+    tipo* get(int index);
     void deleteKey(int i);
     void insertKey(tipo* k);
-    tipo* get(int index);
-    int size()const;
+    int getSize()const;
     void swap(tipo** x,tipo** y);
     int getCapacity()const;
-    void sort();
+    tipo* getMax();
+    tipo* extractMax();
+    void shiftUp(int i);
+    void shiftDown(int i);
+
+    void decreaseKey(int i, tipo* new_value);
+    void MaxHeapify(int i);
 };
 
 

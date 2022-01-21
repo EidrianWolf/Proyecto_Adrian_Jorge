@@ -5,7 +5,7 @@
 #include "Control.h"
 
 Control::Control() {
-    //Iniciar las estructuras de datos
+    //Iniciar las estructuras de toString
     file = new Archivos<Cliente>("DatosBancoUno.txt");
     bst = new BST<Cliente>;
     cp = new PriorityQueue<Cliente>(100);
@@ -48,7 +48,7 @@ void Control::principal() {
     }while(opc!=7);
 }
 void Control::control1() {  //Encolar todos los clientes
-    Cliente* c = new Cliente("a","1",1,1,1,1);
+   /* Cliente* c = new Cliente("a","1",1,1,1,1);
     Cliente* c1 = new Cliente("b","2",0,1,0,2);
     Cliente* c2 = new Cliente("c","3",1,0,0,3);
 
@@ -59,14 +59,18 @@ void Control::control1() {  //Encolar todos los clientes
     cp->push(*c2);
    // cp->sort();
     //cp->Heapify(0);
-    cp->sort();
+    //cp->sort();
     cout<<"Porcentajes a="<<c->getPorcentajeInfluencia()<<"\nb="
     <<c1->getPorcentajeInfluencia()<<"\nc="<<c2->getPorcentajeInfluencia()<<endl;
     cout << cp->max().getNombre() << endl;
     cp->pop();
     cout << cp->max().getNombre() << endl;
     cp->pop();
-    cout << cp->max().getNombre() << endl;
+    cout << cp->max().getNombre() << endl;*/
+
+
+    bst->encolar(*cp);
+    cout<< cp->toString();
 }
 
 void Control::control2() {  //Encolar un cliente

@@ -11,11 +11,9 @@ private:
     Archivos<Cliente>* file;
     BST<Cliente>* bst;
     PriorityQueue<Cliente>* cp;
-    //Aqui deberian estar los arboles, las colas y los heaps
 public:
     Control();
     void principal();
-    //Cada uno de estos metodos es un caso del case en Control::principal()
     void control1();    //Encolar todos los clientes
     void control2();    //Encolar un cliente
     void control3();    //Atender 5 clientes
