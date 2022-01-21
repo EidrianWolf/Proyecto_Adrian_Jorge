@@ -14,7 +14,7 @@ bool PriorityQueue<E>::empty() const {
 }
 
 template<typename E>
-void PriorityQueue<E>::insert( E& e) {
+void PriorityQueue<E>::push(E& e) {
     if (T->size() < T->getCapacity())
         T->insertKey(&e);
     else {
@@ -24,14 +24,14 @@ void PriorityQueue<E>::insert( E& e) {
 }
 
 template<typename E>
-const E &PriorityQueue<E>::min() {
+const E &PriorityQueue<E>::max() {
     return *(T->getMin());
 }
 
 template<typename E>
-void PriorityQueue<E>::removeMin() {
+void PriorityQueue<E>::pop() {
     if(!empty())
-        T->extractMin();
+        T->extractMax();
     else{
         throw new QueueException("Error: Empty stack");
         return;
@@ -51,10 +51,15 @@ int PriorityQueue<E>::getCapacity() const {
 template<typename E>
 void PriorityQueue<E>::sort() {
     T->sort();
+    for(int i=0;i<3;i++)
+         cout<<T->get(i)->getNombre();
 }
 
 template<typename E>
 void PriorityQueue<E>::Heapify(int i) {
-    T->MinHeapify(i);
+    T->MaxHeapify(i);
+   // for(int i=0;i<3;i++)
+   //     cout<<T->get(i)->getNombre();
+
 }
 

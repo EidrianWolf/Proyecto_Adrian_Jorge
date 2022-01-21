@@ -52,28 +52,29 @@ void Control::control1() {  //Encolar todos los clientes
     Cliente* c1 = new Cliente("b","2",0,1,0,2);
     Cliente* c2 = new Cliente("c","3",1,0,0,3);
 
-    cp->insert(*c);
+    cp->push(*c1);
     //cp->sort();
-    cp->insert(*c1);
+    cp->push(*c);
     //cp->sort();
-    cp->insert(*c2);
+    cp->push(*c2);
    // cp->sort();
-    cp->Heapify(0);
+    //cp->Heapify(0);
+    cp->sort();
     cout<<"Porcentajes a="<<c->getPorcentajeInfluencia()<<"\nb="
     <<c1->getPorcentajeInfluencia()<<"\nc="<<c2->getPorcentajeInfluencia()<<endl;
-    cout<<cp->min().getNombre()<<endl;
-    cp->removeMin();
-    cout<<cp->min().getNombre()<<endl;
-    cp->removeMin();
-    cout<<cp->min().getNombre()<<endl;
+    cout << cp->max().getNombre() << endl;
+    cp->pop();
+    cout << cp->max().getNombre() << endl;
+    cp->pop();
+    cout << cp->max().getNombre() << endl;
 }
 
 void Control::control2() {  //Encolar un cliente
     try{
         if(cp->size()!=cp->getCapacity()){
         string ced = Vista::cedulaCliente();
-        cp->insert(*bst->search(ced));
-        cout<<cp->min().getNombre()<<endl;
+            cp->push(*bst->search(ced));
+        cout << cp->max().getNombre() << endl;
         }
         else throw new QueueException("Overflow: Maximum capacity reached");
     }catch (RuntimeException* e){Vista::excepcion(e);}
@@ -83,8 +84,8 @@ void Control::control3() {  //Atender 5 clientes
     try{
         if(!cp->empty())
             for(int i=0;i<5;i++){
-                Vista::infoCliente(cp->min());
-                cp->removeMin();
+                Vista::infoCliente(cp->max());
+                cp->pop();
             }
         else throw new QueueException("Error: Empty queue");
     }catch (RuntimeException* e){Vista::excepcion(e);}
@@ -93,7 +94,7 @@ void Control::control4() {
     try{
         Vista::siguienteCliente();
         if(!cp->empty())
-            Vista::infoCliente(cp->min());
+            Vista::infoCliente(cp->max());
         else throw new QueueException("Error: Empty queue");
     }catch (RuntimeException* e){Vista::excepcion(e);}
 }
@@ -101,8 +102,8 @@ void Control::control5() {
     try{
         if(!cp->empty()){
             while (!cp->empty()){
-                Vista::infoCliente(cp->min());
-                cp->removeMin();
+                Vista::infoCliente(cp->max());
+                cp->pop();
             }
         }
         else throw new QueueException("Error: Empty queue");

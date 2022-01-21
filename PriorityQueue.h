@@ -14,9 +14,9 @@ private:
 public:
     int size()const;
     bool empty()const;
-    void insert( E& e);
-    const E& min();
-    void removeMin();
+    void push(E& e);
+    const E& max();
+    void pop();
     PriorityQueue(int capacity);
     int getCapacity()const;
     void sort();

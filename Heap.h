@@ -21,7 +21,7 @@ public:
     int left(int i);
     int right(int i);
     tipo* getMin();
-    tipo* extractMin();
+    tipo* extractMax();
     void decreaseKey(int i, tipo* new_value);
     void deleteKey(int i);
     void insertKey(tipo* k);
@@ -29,6 +29,7 @@ public:
     int size()const;
     void swap(tipo** x,tipo** y);
     int getCapacity()const;
+    void sort();
 };
 
 

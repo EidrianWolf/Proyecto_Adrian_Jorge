@@ -1,5 +1,5 @@
 //
-// Created by jartu on 1/16/2022.
+// Created by Jorge on 1/16/2022.
 //
 
 #include "Heap.h"
@@ -15,15 +15,25 @@ template<class tipo>
 void Heap<tipo>::MaxHeapify(int i) {
     int l = left(i);
     int r = right(i);
-    int largest = 0;
-    if()
-    if(l<heap_size&&arr[l]<arr[i])
-        smallest=l;
-    if(r<heap_size&&arr[r]<arr[smallest])
-        smallest=r;
-    if(smallest!=i){
-        swap(&arr[i],&arr[smallest]);
-        MaxHeapify(smallest);
+    int largest = i;
+    /*
+    if(l<heap_size&&arr[l]>arr[i])
+        largest=l;
+    if(r<heap_size&&arr[r]>arr[largest])
+        largest=r;
+    if(largest!=i){
+        swap(&arr[i],&arr[largest]);
+        MaxHeapify(largest);
+    }*/
+    if(arr[i]<arr[left(i)]||arr[i]<arr[right(i)]){
+        if(arr[left(i)]>arr[right(i)]){
+            swap(&arr[i],&arr[left(i)]);
+            MaxHeapify(left(i));
+        }
+        else{
+            swap(&arr[i], &arr[right(i)]);
+            MaxHeapify(right(i));
+        }
     }
 }
 
@@ -48,18 +58,13 @@ tipo *Heap<tipo>::getMin() {
 }
 
 template<class tipo>
-tipo *Heap<tipo>::extractMin() {
-    if(heap_size<=0)
-        return nullptr;
-    if(heap_size==1){
-        heap_size--;
-        return arr[0];
-    }
+tipo *Heap<tipo>::extractMax() {
     tipo* root = arr[0];
     arr[0]=arr[heap_size-1];
     heap_size--;
     MaxHeapify(0);
     return root;
+
 }
 
 template<class tipo>
@@ -74,22 +79,24 @@ void Heap<tipo>::decreaseKey(int i, tipo *new_value) {
 template<class tipo>
 void Heap<tipo>::deleteKey(int i) {
     decreaseKey(i, nullptr);
-    extractMin();
+    extractMax();
 }
 
 template<class tipo>
 void Heap<tipo>::insertKey(tipo *k) {
     if(heap_size==capacity){
-        throw new RuntimeException(" Overflow: Could not insert key");
+        throw new RuntimeException(" Overflow: Could not push key");
         return;
     }
-    heap_size++;
-    int i=heap_size-1;
-    arr[i]=k;
-    while (i!=0&&arr[parent(i)]>arr[i]){
+    arr[heap_size]=k;
+    int i=heap_size;
+    //MaxHeapify(i-1);
+    //sort();
+    while (i!=0&&arr[i]>arr[parent(i)]){
         swap(&arr[i],&arr[parent(i)]);
         i= parent(i);
     }
+    heap_size++;
 }
 
 template<class tipo>
@@ -112,5 +119,13 @@ void Heap<tipo>::swap(tipo** x,tipo** y){
 template<class tipo>
 int Heap<tipo>::getCapacity() const {
     return capacity;
+}
+
+template<class tipo>
+void Heap<tipo>::sort() {
+    for (int i = heap_size - 1; i >= 0; i--) {
+        swap(&arr[0], &arr[i]);
+        MaxHeapify(0);
+    }
 }
 
