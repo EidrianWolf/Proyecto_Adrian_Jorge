@@ -86,12 +86,12 @@ Nodo<T>* BST<T>::remove(int x, Nodo<T> *t) {
 }
 
 template <class T>
-Nodo<T>* BST<T>::find(Nodo<T> *t, T* x) {
+Nodo<T>* BST<T>::find(Nodo<T> *t, string x) {
     if (t == nullptr)
         return nullptr;
-    else if (x->getID() < t->getData()->getID())
+    else if (x < t->getData()->getID())
         return find(t->getLeft(), x);
-    else if (x->getID() > t->getData()->getID())
+    else if (x > t->getData()->getID())
         return find(t->getRight(), x);
     else
         return t;
@@ -110,8 +110,8 @@ void BST<T>::remove(int x) {
 
 
 template <class T>
-void BST<T>::search(T* x) {
-    root = find(root, x);
+void BST<T>::search(string t) {
+    root = find(root, t);
 }
 
 template <class T>
