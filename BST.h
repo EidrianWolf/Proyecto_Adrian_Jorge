@@ -19,14 +19,14 @@ private:
     Nodo<T> *findMin(Nodo<T> *t);
     Nodo<T> *findMax(Nodo<T> *t);
     Nodo<T> *remove(int x, Nodo<T> *t);
-    void inOrder(Nodo<T> *t);
+    void inOrder(PriorityQueue<T>* cola, Nodo<T>* t);
     Nodo<T> *find(Nodo<T> *t, string x);
 public:
     BST();
     virtual ~BST();
     void insert(T *t);
     void remove(int x);
-    string display(Nodo<T> *t);
+    void encolarEnCola(PriorityQueue<T>* cola);
     T* search(string t);
     int getCant();
     string toString(Nodo<T>* t);

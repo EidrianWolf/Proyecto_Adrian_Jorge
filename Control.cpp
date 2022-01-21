@@ -69,7 +69,9 @@ void Control::control1() {  //Encolar todos los clientes
     cout << cp->max().getNombre() << endl;*/
 
 
-    bst->encolar(*cp);
+    bst->encolarEnCola(cp);
+
+    cout<<cp->size()<<endl;
     cout<< cp->toString();
 }
 

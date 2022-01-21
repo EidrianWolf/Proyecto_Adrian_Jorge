@@ -59,6 +59,15 @@ Nodo<T>* BST<T>::findMax(Nodo<T> *t) {
 }
 
 template <class T>
+void BST<T>::inOrder(PriorityQueue<T>* cola, Nodo<T>* t) {
+    if (t == nullptr)
+        return;
+    inOrder(cola,t->getLeft());
+    cola->push(*t->getData());
+    inOrder(cola,t->getRight());
+}
+
+template <class T>
 Nodo<T>* BST<T>::remove(int x, Nodo<T> *t) {
     Nodo<T>* temp;
     if(t == nullptr){
@@ -107,7 +116,6 @@ template <class T>
 void BST<T>::remove(int x) {
     root = remove(x,root);
 }
-
 
 template <class T>
 T* BST<T>::search(string t) {
@@ -159,5 +167,10 @@ void BST<T>::encolar(PriorityQueue<T> &cola) {
 
 
 
+}
+
+template<class T>
+void BST<T>::encolarEnCola(PriorityQueue<T> *cola) {
+    inOrder(cola, root);
 }
 
