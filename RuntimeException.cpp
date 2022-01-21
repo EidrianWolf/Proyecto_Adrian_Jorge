@@ -10,3 +10,5 @@ string RuntimeException::getMessage() const {
     return msg;}
 
 QueueException::QueueException(const string &e) : RuntimeException(e) {}
+
+FileException::FileException(const string &e) : RuntimeException(e) {}

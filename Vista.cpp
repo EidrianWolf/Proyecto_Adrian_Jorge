@@ -27,11 +27,11 @@ void Vista::encolarClientes() { //Recibe el arbol y la cola por parametro
      */
 }
 
-void Vista::encolarCliente() {  //Recibe arbol por parametro
+string Vista::cedulaCliente() {
     string ced;
     cout<<"Ingrese el numero de cedula del cliente que desea encolar: ";
     cin>>ced;
-    //cola->encolar(arbol->search(ced))
+    return ced;
 }
 
 void Vista::salida() {
@@ -42,32 +42,18 @@ void Vista::opcionIncorrecta() {
     cout<<"Esta opcion no es valida, vuelva a intentarlo..."<<endl;
 }
 
-void Vista::atenderClientes(PriorityQueue<Cliente>* cola) {
-    for(int i=0;i<5;i++) {
-        infoCliente(cola->min());
-        cola->removeMin();
-    }
-}
-
-void Vista::atenderTodosLosClientes(PriorityQueue<Cliente>* cola) {
-    while (!cola->empty()){
-        infoCliente(cola->min());
-        cola->removeMin();
-    }
-
-}
-
-void Vista::siguienteCliente(PriorityQueue<Cliente>*cola) {
+void Vista::siguienteCliente() {
     cout<<"Siguiente cliente en cola: "<<endl;
-    infoCliente(cola->min());
 }
 
 Cliente *Vista::agregarCliente() {
-    string nom, id, nin, emb, adM;
+    string id, nin, emb, adM;
     int cat, confirmacion;
+    char nom[255];
     bool nino = false, embar = false, adultM = false;
     cout << "Ingrese el nombre del cliente: ";
-    cin >> nom;
+    cin.ignore();
+    cin.getline(nom,255);
     cout << "Ingrese el numero de identificacion: ";
     cin >> id;
     cout << "Ingresa con un nino? y/n: ";

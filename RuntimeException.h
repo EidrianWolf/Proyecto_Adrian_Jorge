@@ -21,5 +21,8 @@ public:
     QueueException(const string& e);
 };
 
-
+class FileException:public RuntimeException{
+public:
+    FileException(const string& e);
+};
 #endif //HEAP_TEMPLATE_RUNTIMEEXCEPTION_H

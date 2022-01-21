@@ -5,6 +5,8 @@
 #ifndef PROYECTO_ADRIAN_JORGE_VISTA_H
 #define PROYECTO_ADRIAN_JORGE_VISTA_H
 #include <iostream>
+#include <cstdlib>
+#include <stdio.h>
 #include "Archivos.cpp"
 #include "PriorityQueue.h"
 #include "PriorityQueue.cpp"
@@ -14,10 +16,8 @@ class Vista {
 public:
     static int menuPrincipal();
     static void encolarClientes();  //Deberia recibir un arbol y una cola por parametro
-    static void encolarCliente();   //Deberia recibir un arbol por parametro
-    static void atenderClientes(PriorityQueue<Cliente>* cola);  //Cola
-    static void atenderTodosLosClientes(PriorityQueue<Cliente>* cola);//Cola
-    static void siguienteCliente(PriorityQueue<Cliente>* cola); //Recibe la cola
+    static string cedulaCliente();   //Deberia recibir un arbol por parametro
+    static void siguienteCliente(); //Recibe la cola
     static Cliente* agregarCliente();
     static void salida();
     static void opcionIncorrecta();

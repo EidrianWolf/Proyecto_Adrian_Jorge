@@ -8,6 +8,7 @@
 
 #include <fstream>
 #include "BST.cpp"
+#include "RuntimeException.h"
 
 template <class T>
 class Archivos {
