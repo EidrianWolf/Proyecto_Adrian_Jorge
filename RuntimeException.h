@@ -26,4 +26,9 @@ public:
     FileException(const string& e);
 };
 
+class ClientIDException:public RuntimeException{
+public:
+    ClientIDException(const string& e);
+};
+
 #endif //HEAP_TEMPLATE_RUNTIMEEXCEPTION_H

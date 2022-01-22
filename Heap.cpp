@@ -76,7 +76,7 @@ void Heap<tipo>::deleteKey(int i) {
 
 template<class tipo>
 void Heap<tipo>::insertKey(tipo *k) {
-    if(heap_size==capacity){
+    if(getSize()==capacity){
         throw new RuntimeException(" Overflow: Could not push key");
         return;
     }
@@ -96,7 +96,7 @@ tipo *Heap<tipo>::get(int index) {
 
 template<class tipo>
 int Heap<tipo>::getSize() const {
-    return heap_size;
+    return heap_size+1;
 }
 
 template <class tipo>

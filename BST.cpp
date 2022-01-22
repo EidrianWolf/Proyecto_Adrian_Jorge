@@ -96,14 +96,17 @@ Nodo<T>* BST<T>::remove(int x, Nodo<T> *t) {
 
 template <class T>
 Nodo<T>* BST<T>::find(Nodo<T> *t, string x) {
+
     if (t == nullptr)
         return nullptr;
     else if (x < t->getData()->getID())
         return find(t->getLeft(), x);
     else if (x > t->getData()->getID())
         return find(t->getRight(), x);
-    else
+    else if(x == t->getData()->getID())
         return t;
+    else
+        return nullptr;
 }
 
 template <class T>
@@ -119,8 +122,11 @@ void BST<T>::remove(int x) {
 
 template <class T>
 T* BST<T>::search(string t) {
-    root = find(root, t);
-    return root->getData();
+    Nodo<T>* nodo = find(root, t);
+    if(nodo != nullptr)
+        return nodo->getData();
+    else
+        return nullptr;
 }
 
 template <class T>
@@ -141,32 +147,6 @@ string BST<T>::toString(Nodo<T> *t) {
 template<class T>
 string BST<T>::gArchivo(Nodo<T> *t) {
     return t->getData()->toSave();
-}
-
-template<class T>
-void BST<T>::encolar(PriorityQueue<T> &cola) {
-    Nodo<T>* iterator=root;
-   /*while (iterator!= nullptr){   //Recorrer a la izquierda
-        cola.push(*(iterator->getData()));
-        iterator=iterator->getLeft();
-
-    }
-    iterator=root->getRight();
-    while(iterator!= nullptr){  //Recorrer a la derecha
-        cola.push(*(iterator->getData()));
-        iterator=iterator->getLeft();
-    }*/
-
-    /*
-     * Tengo el iterador en la raiz
-     * recorro la izquierda hasta encontrar null
-     * guardo esa posicion, tomo al padre y luego la derecha
-     * si es nulo vuelvo al padre y al padre de este
-     * continuo a la derecha con el mismo proceso
-     */
-
-
-
 }
 
 template<class T>

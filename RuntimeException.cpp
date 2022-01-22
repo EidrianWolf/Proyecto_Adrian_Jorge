@@ -13,3 +13,6 @@ QueueException::QueueException(const string &e) : RuntimeException(e) {}
 
 FileException::FileException(const string &e) : RuntimeException(e) {}
 
+ClientIDException::ClientIDException(const string &e) : RuntimeException(e) {
+
+}

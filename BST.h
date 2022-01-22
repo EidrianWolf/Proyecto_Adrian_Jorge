@@ -32,7 +32,6 @@ public:
     string toString(Nodo<T>* t);
     Nodo<T> *getRoot() const;
     string gArchivo(Nodo<T>* t);
-    void encolar(PriorityQueue<T>& cola);
 };
 
 

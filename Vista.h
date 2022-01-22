@@ -23,6 +23,8 @@ public:
     static void opcionIncorrecta();
     static void infoCliente(Cliente c);
     static void excepcion(RuntimeException* e);
+    static void noClient();
+    static void confirmacion();
 };
 
 

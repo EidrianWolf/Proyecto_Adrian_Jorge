@@ -20,11 +20,8 @@ int Vista::menuPrincipal() {
 }
 
 void Vista::encolarClientes() { //Recibe el arbol y la cola por parametro
-    /*
-     * Deberia recorrerIzq el arbol y guardar todos los clientes en la cola
-     *  el criterio de influencia se calcula con Cliente::getPorcentajeInfluencia()
-     *  utilizar cola->enconlar() en ciclo mientras se recorre el arbol
-     */
+    cout<<"Todos los clientes han sido guardados en la cola"<<endl<<endl;
+    system("pause");
 }
 
 string Vista::cedulaCliente() {
@@ -35,7 +32,7 @@ string Vista::cedulaCliente() {
 }
 
 void Vista::salida() {
-    cout<<"Hasta luego"<<endl;
+    cout<<"Sistema Cerrado..."<<endl;
 }
 
 void Vista::opcionIncorrecta() {
@@ -87,10 +84,22 @@ Cliente *Vista::agregarCliente() {
 void Vista::infoCliente(Cliente c) {
     cout<<"Informacion del cliente"<<endl;
     cout<<c.toString()<<endl;
+    system("pause");
+    cout<<"***Atendido***"<<endl<<endl;
 }
 
 void Vista::excepcion(RuntimeException *e) {
     cout<<e->getMessage()<<endl;
+}
+
+void Vista::noClient() {
+    cout<<"No hay cliente registrado con esa ID"<<endl;
+    system("pause");
+}
+
+void Vista::confirmacion() {
+    cout<<"Cliente exitosamente agregado"<<endl;
+    system("pause");
 }
 
 
